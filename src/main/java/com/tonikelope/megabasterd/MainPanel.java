@@ -104,10 +104,23 @@ public final class MainPanel {
 
     public static void main(String args[]) {
 
+       /*
+
         setNimbusLookAndFeel();
 
         UIDefaults defaults = UIManager.getLookAndFeelDefaults();
         defaults.put("nimbusOrange", defaults.get("nimbusFocus"));
+
+        */
+
+        // setup Look and Feel UI FlatLaf
+     
+        try {
+            UIManager.setLookAndFeel( new FlatLightLaf() );
+        } catch( Exception ex ) {
+            System.err.println( "Failed to initialize LaF" );
+        }
+        
 
         if (args.length > 0) {
 
